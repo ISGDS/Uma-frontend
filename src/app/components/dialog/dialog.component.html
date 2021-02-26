@@ -1,0 +1,42 @@
+<mat-toolbar>
+    <span>Row Action :: <strong>{{action}}</strong></span>
+</mat-toolbar>
+<mat-card class="my-card">
+    <mat-dialog-content>
+        <div *ngIf="action == 'Update'">
+            <mat-form-field>
+                <mat-label>Name</mat-label>
+                <input placeholder="{{action}} Name" matInput [(ngModel)]="user.name">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Surename</mat-label>
+                <input placeholder="{{action}} Surename" matInput [(ngModel)]="user.surename">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Date</mat-label>
+                <input placeholder="{{action}} Date" matInput [(ngModel)]="user.date">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Email</mat-label>
+                <input placeholder="{{action}} Email" matInput [(ngModel)]="user.email">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Password</mat-label>
+                <input placeholder="{{action}} Password" matInput [(ngModel)]="user.password">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Phone</mat-label>
+                <input placeholder="{{action}} Phone" matInput [(ngModel)]="user.phone">
+            </mat-form-field>
+        </div>
+        <div *ngIf="action == 'Delete'">
+            <mat-label>
+                <p>Sure to delete user <b>{{user.name}}</b> with id <b>{{user.id}}</b>?</p>
+            </mat-label>
+        </div>
+    </mat-dialog-content>
+    <mat-card-actions>
+        <button mat-button (click)="doAction()" mat-raised-button color="warn">{{action}}</button>
+        <button mat-button (click)="closeDialog()" mat-raised-button color="basic">Cancel</button>
+    </mat-card-actions>
+</mat-card>

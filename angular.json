@@ -69,7 +69,8 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "uma:build:production"
+              "browserTarget": "uma:build:production",
+              "proxyConfig": "src/proxy.conf.json"
             }
           }
         },
